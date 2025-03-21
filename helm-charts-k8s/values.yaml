@@ -17,6 +17,11 @@ kmm:
 # -- Default NFD rule will detect amd gpu based on pci vendor ID
 installdefaultNFDRule: true
 
+# -- For ArgoCD users CRDs are managed for you, and helm hooks won't work as the semantics are
+# completely different when converted e.g. you cannot even install, so this allows them to be
+# inhibited completely.
+hooks: true
+
 # -- CRD will be patched as pre-upgrade/pre-rollback hook when doing helm upgrade/rollback to current helm chart
 upgradeCRD: true
 

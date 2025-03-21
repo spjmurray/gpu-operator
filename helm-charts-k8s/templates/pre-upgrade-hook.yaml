@@ -1,3 +1,4 @@
+{{- if .Values.hooks }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -166,3 +167,4 @@ spec:
       restartPolicy: OnFailure
 {{- end }}
 # Run helm upgrade with --no-hooks to bypass the pre-upgrade hook
+{{- end }}

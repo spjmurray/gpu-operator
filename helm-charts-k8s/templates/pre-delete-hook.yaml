@@ -1,3 +1,4 @@
+{{- if .Values.hooks }}
 # Run helm uninstall with --no-hooks to bypass the pre-delete hook 
 apiVersion: v1
 kind: ServiceAccount
@@ -99,3 +100,4 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       restartPolicy: Never
+{{- end }}
